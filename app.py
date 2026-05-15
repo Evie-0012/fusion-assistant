@@ -39,7 +39,18 @@ st.markdown('<div class="subtitle">基于大模型的核聚变企业与投资机
 # ===== 侧边栏：配置 =====
 with st.sidebar:
     st.header("⚙️ 设置")
-    api_key = st.text_input("DeepSeek API Key", type="password", placeholder="sk-...")
+    
+    # 从 Streamlit Secrets 读取默认 Key，如果没设置则为空字符串
+    default_key = st.secrets.get("DEEPSEEK_API_KEY", "")
+    
+    api_key = st.text_input(
+        "DeepSeek API Key",
+        type="password",
+        value=default_key,
+        placeholder="sk-...",
+        help="已预置默认 Key，也可输入你自己的 Key"
+    )
+    
     db_path = st.text_input("数据库路径", value="fusion_industry.db")
     
     st.divider()
@@ -126,4 +137,4 @@ if prompt := st.chat_input("请输入你的问题..."):
 
 # ===== 底部 =====
 st.divider()
-st.caption("⚡ 聚变行业智能助手 v1.0 | 数据来源：微信公众号 + 工商信息 | 模型：DeepSeek")
+st.caption("⚡ 聚变行业智能助手 v1.0 | 数据来源：微信公众号 + 工商信息 | 模型：DeepSeek")模型：DeepSeek")
