@@ -137,4 +137,4 @@ if prompt := st.chat_input("请输入你的问题..."):
 
 # ===== 底部 =====
 st.divider()
-st.caption("⚡ 聚变行业智能助手 v1.0 | 数据来源：微信公众号 + 工商信息 | 模型：DeepSeek")模型：DeepSeek")
+st.caption("⚡ 聚变行业智能助手 v1.0 | 数据来源：微信公众号 + 工商信息 | 模型：DeepSeek")
